@@ -2,13 +2,15 @@
 
 ![logo]()
 
-# docsify <small>3.5</small>
+# docs <small>1.0</small>
 
-> 一个神奇的文档网站生成器。
+> An awesome Docs 。
 
-- 简单、轻便 (压缩后 ~21kB)
-- 无需生成 html 文件
-- 众多主题
+- 技术文档
 
-[GitHub](https://github.com/docsifyjs/docsify/)
+[GitHub](https://github.com/XCHLX/Docs)
 [GO .Net](/Net/面试宝典)
+
+<!-- [GO .Net](/Net/面试宝典)
+[GO .Net](/Net/面试宝典)
+[GO .Net](/Net/面试宝典) -->
