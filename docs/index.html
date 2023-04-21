@@ -13,15 +13,7 @@
 
     <link
       rel="stylesheet"
-      href="https://notebook.js.org/plugin/css/vue-1.css"
-    />
-
-    <!-- alert -->
-    <link
-      rel="stylesheet"
-      href="https://notebook.js.org/plugin/sweetalert.min.css"
-      type="text/css"
-      media="all"
+      href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
     />
 
     <!-- 自定义样式 -->
@@ -29,13 +21,9 @@
       /* 头部导航 */
       .app-nav {
         position: fixed;
-        /* margin: 0; */
-        /*padding: 10px 50px 10px 0;*/
         margin: 10px 90px 10px 0; /*上、右、下、左*/
         width: calc(100% - 400px);
-        /* background-color: #fff; */
         height: 55px;
-        /* border-bottom: 1px solid #eee; */
       }
 
       /*侧边栏*/
@@ -199,53 +187,6 @@
         margin: 0 3.2% !important;
       }
 
-      /*修改代码块代码颜色显示*/
-      .token.directive.keyword {
-        color: #4faee2 !important;
-      }
-
-      .token.keyword {
-        color: #c678dd !important;
-      }
-
-      .token.comment {
-        color: #737c8b !important;
-      }
-
-      .token.tag {
-        color: #a589ad !important;
-      }
-
-      .token.attr-name {
-        color: #de916c !important;
-      }
-
-      .token.attr-value {
-        color: #4faee2 !important;
-      }
-
-      .token.macro.property {
-        color: #4faee2 !important;
-      }
-
-      .token.function {
-        color: #e6b456 !important;
-      }
-      .token.string {
-        color: #98b755 !important;
-      }
-      .token.punctuation {
-        color: #c0c3c1 !important;
-      }
-
-      .token.number {
-        color: #c0c3c1 !important;
-      }
-
-      a.section-link {
-        font-size: 0.9rem !important;
-      }
-
       /*滚动条样式 start*/
       /* 滚动条宽度 */
       ::-webkit-scrollbar {
@@ -258,9 +199,26 @@
         border-radius: 2em;
       }
     </style>
+    <!-- CSS -->
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/artalk/2.5.4/Artalk.css"
+      rel="stylesheet"
+    />
+
+    <!-- JS -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/artalk/2.5.4/Artalk.js"></script>
+    <script>
+      Artalk.init({
+        el: "#Comments", // 绑定元素的 Selector
+        server: "http://120.48.115.143:8080", // 后端地址
+        site: "Artalk 的博客", // 你的站点名
+      });
+    </script>
   </head>
   <body>
+    <div id="Comments"></div>
     <div id="app">🏃‍🏃‍🏃‍💨 加载中...</div>
+    <!-- Artalk -->
 
     <script>
       window.$docsify = {
@@ -374,104 +332,38 @@
         },
       };
     </script>
-    <script src="https://notebook.js.org/plugin/js/docsify.min.js"></script>
-    <script src="https://notebook.js.org/plugin/search.min.js"></script>
-    <script src="https://notebook.js.org/plugin/zoom-image.min.js"></script>
+    <!-- Docsify v4 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+    <!-- 外链脚本 - External Script -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
+    <!-- 搜索 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <!-- 图片预览 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 
     <!-- 复制代码-->
-    <script src="https://notebook.js.org/plugin/docsify-copy-code.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
 
-    <!-- 回到顶部功能 -->
-    <script src="https://notebook.js.org/plugin/jquery.js"></script>
-    <script src="https://notebook.js.org/plugin/jquery.goup.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $.goup({
-          trigger: 100,
-          bottomOffset: 52,
-          locationOffset: 25,
-          // title: "TOP",
-          titleAsText: true,
-        });
-      });
-    </script>
-
-    <!-- 代码块样式优化-->
-    <script src="https://notebook.js.org/plugin/prism-c.js"></script>
-    <!--<script src="//unpkg.com/prismjs/components/prism-cpp.js"></script>-->
-    <script src="https://notebook.js.org/plugin/prism-cpp.js"></script>
-    <script src="https://notebook.js.org/plugin/prism-css.js"></script>
-    <script src="https://notebook.js.org/plugin/prism-docker.js"></script>
-    <script src="https://notebook.js.org/plugin/prism-java.js"></script>
-    <script src="https://notebook.js.org/plugin/prism-javascript.js"></script>
-    <script src="https://notebook.js.org/plugin/prism-json.js"></script>
-    <script src="https://notebook.js.org/plugin/prism-latex.js"></script>
-    <script src="https://notebook.js.org/plugin/prism-sql.js"></script>
-    <script src="https://notebook.js.org/plugin/prism-markdown.js"></script>
-    <script src="https://notebook.js.org/plugin/prism-bash.min.js"></script>
-    <script src="https://notebook.js.org/plugin/prism-php.min.js"></script>
-    <script src="https://notebook.js.org/plugin/prism-scala.min.js"></script>
-    <script src="https://notebook.js.org/plugin/prism-nginx.min.js"></script>
-    <script src="https://notebook.js.org/plugin/prism-json.min.js"></script>
-    <script src="https://notebook.js.org/plugin/prism-markdown.min.js"></script>
-    <script src="https://notebook.js.org/plugin/prism-python.js"></script>
-    <script src="https://notebook.js.org/plugin/js/prism-yaml.js"></script>
-    <script src="https://notebook.js.org/plugin/js/prism-go.js"></script>
-    <script src="https://notebook.js.org/plugin/js/prism-matlab.js"></script>
-
-    <!-- mouse click -->
-    <script src="https://notebook.js.org/plugin/click_heart.js"></script>
-
-    <!-- 复制提醒 -->
-    <script src="https://notebook.js.org/plugin/sweetalert.min.js"></script>
+    <!-- 添加页脚 -->
+    <script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
+    <!-- 字数统计 -->
+    <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+    <!-- 进度 -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
+    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+    <!-- 复制监控 -->
     <script>
       document.body.oncopy = function () {
-        swal(
+        alert(
           "复制成功 🎉",
-          "若要转载或引用请务必保留原文链接，并申明来源。如果你觉得本仓库不错，那就来 GitHub 给个 Star 吧     - by CHL",
+          "若要转载或引用请务必保留原文链接，并申明来源。如果你觉得本仓库不错，那就来 GitHub 给个 Star 吧 😊   - by 吴跟强",
           "success"
         );
       };
     </script>
 
-    <!-- 添加页脚 -->
-    <script src="https://notebook.js.org/plugin/docsify-footer-enh.min.js"></script>
-
-    <!-- <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
-    <script>
-      L2Dwidget.init({
-        model: {
-          //jsonpath控制显示那个小萝莉模型，
-          //(切换模型需要改动)
-          jsonPath:
-            "https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json",
-          scale: 1,
-        },
-        display: {
-          position: "right", //看板娘的表现位置
-          width: 140, //小萝莉的宽度
-          height: 280, //小萝莉的高度
-          hOffset: 35,
-          vOffset: -60,
-        },
-        mobile: {
-          show: true,
-          scale: 0.5,
-        },
-        react: {
-          opacityDefault: 0.7,
-          opacityOnHover: 0.2,
-        },
-        dialog: {
-          enable: true,
-          script: {
-            "tap body": "哎呀！别碰我！",
-            "tap face": "人家是在认真学前端的妹子",
-          },
-        },
-      });
-    </script> -->
-
+    <!-- 代码高亮 -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-csharp.min.js"></script>
     <script
       src="https://l2dwidget.js.org/lib/L2Dwidget.min.js"
       type="text/javascript"

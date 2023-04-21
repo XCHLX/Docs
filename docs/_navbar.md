@@ -3,6 +3,6 @@
 
 <!-- - [Home](/) -->
 
-- .Net
-  - [.Net 基础理论](/Net/基础理论 ".Net基础理论")
-  - [.Net 基础语法](/Net/基础语法 ".基础语法")
+- [<span class="iconfont icon-icon_fabu"></span> 首页](/)
+  - [🚀.Net](/Net/README ".Net ")
+- [作者相关](/Author/README)
