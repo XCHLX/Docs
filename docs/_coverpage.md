@@ -7,4 +7,4 @@
 - 技术文档
 
 [GitHub](https://github.com/XCHLX/Docs)
-[开始浏览](/README)
+[开始浏览](/index)
