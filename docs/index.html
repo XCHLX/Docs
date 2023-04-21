@@ -207,13 +207,6 @@
 
     <!-- JS -->
     <script src="https://cdn.bootcdn.net/ajax/libs/artalk/2.5.4/Artalk.js"></script>
-    <script>
-      Artalk.init({
-        el: "#Comments", // 绑定元素的 Selector
-        server: "http://120.48.115.143:8080", // 后端地址
-        site: "Artalk 的博客", // 你的站点名
-      });
-    </script>
   </head>
   <body>
     <div id="Comments"></div>
@@ -361,7 +354,13 @@
         );
       };
     </script>
-
+    <script>
+      Artalk.init({
+        el: "#Comments", // 绑定元素的 Selector
+        server: "http://120.48.115.143:8080", // 后端地址
+        site: "Artalk 的博客", // 你的站点名
+      });
+    </script>
     <!-- 代码高亮 -->
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-csharp.min.js"></script>
     <script
