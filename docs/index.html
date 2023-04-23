@@ -22,14 +22,22 @@
 
     <!-- 自定义样式 -->
     <style>
+      :root {
+        --code-color: #212121; /* 代码块样式*/
+      }
       /* 头部导航 */
       .app-nav {
         position: fixed;
-        margin: 10px 90px 10px 0; /*上、右、下、左*/
+        margin: 0px 90px 0px 0px; /*上、右、下、左*/
         width: calc(100% - 400px);
         height: 55px;
       }
-
+      .close > .app-nav {
+        position: fixed;
+        margin: 0px 90px 0px 0px; /*上、右、下、左*/
+        width: calc(100%);
+        height: 55px;
+      }
       /*侧边栏*/
 
       /* 菜单字体 */
@@ -79,11 +87,11 @@
       .markdown-section pre:before {
         content: "";
         display: block;
-        background: url(./image/codeStyle.png);
+        background: url(./assets/docs-image/codeStyle.png);
         height: 30px;
         background-size: 40px;
         background-repeat: no-repeat;
-        background-color: #1c1c1c;
+        background-color: var(--code-color);
         background-position: 10px 10px;
       }
       /*代码块头部图标 end*/
@@ -91,7 +99,7 @@
         color: #c0c3c1 !important;
         font-family: "Inconsolata", consolas, "PingFang SC", "Microsoft YaHei",
           monospace !important;
-        background-color: #212121 !important;
+        background-color: var(--code-color) !important;
         font-size: 15px !important;
         white-space: pre !important;
         line-height: 1.5 !important;
@@ -101,7 +109,7 @@
         /*border-radius: .3em;*/
       }
       pre {
-        background-color: #212121 !important;
+        background-color: var(--code-color) !important;
       }
       /*滚动条样式 start*/
       /* 滚动条宽度 */
@@ -251,7 +259,7 @@
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
   <!-- 外链脚本 - External Script -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
   <!-- 搜索 -->
@@ -279,9 +287,23 @@
     };
   </script>
   <!-- 网页浏览进度条 -->
-  <script src="./js/progressBar.js"></script>
+  <script src="./assets/docs-js/progressBar.js"></script>
   <script>
-    uTools();
+    uTools.inItProgressBar(); // 页面浏览进度条
+    uTools.inItGoUp({
+      id: "gPid",
+      right: "0px",
+      content: "top",
+    });
+    window.addEventListener("hashchange", function () {
+      if (window.location.hash != "#/") {
+        document.getElementsByClassName("app-nav")[0].style.backgroundColor =
+          "#ffffff";
+      } else {
+        document.getElementsByClassName("app-nav")[0].style.backgroundColor =
+          "";
+      }
+    });
   </script>
   <!-- 代码高亮 -->
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-csharp.min.js"></script>
