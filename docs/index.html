@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <title>notebook</title>
-    <!-- <link rel="icon" href="https://notebook.js.org/images/" /> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="Description" />
     <meta
@@ -52,7 +51,7 @@
         position: relative;
       }
       aside.sidebar ul li.active > a:before {
-        content: "" !important;
+        content: '' !important;
         position: absolute !important;
         margin: 0 !important;
         width: 10px !important;
@@ -85,7 +84,7 @@
 
       /* 代码块头部图标 start */
       .markdown-section pre:before {
-        content: "";
+        content: '';
         display: block;
         background: url(./assets/docs-image/codeStyle.png);
         height: 30px;
@@ -97,7 +96,7 @@
       /*代码块头部图标 end*/
       .markdown-section pre > code {
         color: #c0c3c1 !important;
-        font-family: "Inconsolata", consolas, "PingFang SC", "Microsoft YaHei",
+        font-family: 'Inconsolata', consolas, 'PingFang SC', 'Microsoft YaHei',
           monospace !important;
         background-color: var(--code-color) !important;
         font-size: 15px !important;
@@ -106,7 +105,8 @@
         -moz-tab-size: 4 !important;
         -o-tab-size: 4 !important;
         tab-size: 4 !important;
-        /*border-radius: .3em;*/
+        padding: 15px 10px !important;
+        border-radius: 0.3em;
       }
       pre {
         background-color: var(--code-color) !important;
@@ -115,6 +115,7 @@
       /* 滚动条宽度 */
       ::-webkit-scrollbar {
         width: 5px;
+        height: 3px;
       }
       /* 滚动条颜色 */
       ::-webkit-scrollbar-thumb {
@@ -139,51 +140,51 @@
   </body>
   <script>
     window.$docsify = {
-      name: "<p>🌈   NoteBook</p>",
-      nameLink: "#/",
-      repo: "https://github.com/XCHLX/Docs",
-      themeColor: "rgb(66, 185, 131)", // 主题颜色
+      name: '<p>🌈   NoteBook</p>',
+      nameLink: '#/',
+      repo: 'https://github.com/XCHLX/Docs',
+      themeColor: 'rgb(66, 185, 131)', // 主题颜色
       loadSidebar: true, //_sidebar.md如果为真，则从_sidebar.md文件加载边栏，否则从指定的路径加载
       auto2top: true, //当路线改变时,滚动到屏幕的顶部
       loadNavbar: true, //_navbar.md如果为真，则从_navbar.md文件加载navbar ，否则从指定的路径加载
       alias: {
-        "/.*/_navbar.md": "/_navbar.md",
+        '/.*/_navbar.md': '/_navbar.md'
         // "/.*/_sidebar.md": "/_sidebar.md",
       },
       mergeNavbar: true, //Navbar将在小屏幕上与侧边栏合并
       executeScript: true, //执行页面上的脚本。只解析第一个脚本标记（演示）。如果存在Vue，则默认开
       maxLevel: 6, //最大的内容表级别
       subMaxLevel: 6, //在自定义边栏中添加目录（TOC)
-      externalLinkTarget: "_blank", //外链打开方式：_blank表示在新标签页中打开
+      externalLinkTarget: '_blank', //外链打开方式：_blank表示在新标签页中打开
       coverpage: true,
       onlyCover: true,
       topMargin: 60, //调整top
       //executeScript: true,//执行页面上的脚本，仅解析第一个脚本标签
       search: {
-        paths: "auto",
-        placeholder: "🔍 搜索",
-        noData: "😒 找不到结果",
+        paths: 'auto',
+        placeholder: '🔍 搜索',
+        noData: '😒 找不到结果',
         // Headline depth, 1 - 6
         depth: 6,
-        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        maxAge: 86400000 // 过期时间，单位毫秒，默认一天
       }, //添加搜索框
 
       footer: {
-        copy: " 完结 <br> ",
-        auth: "<span> 一个人可以走的很快，但一群人才能走的更远！</span>",
-        pre: "<hr/>",
-        style: "text-align: left;",
+        copy: ' 完结 <br> ',
+        auth: '<span> 一个人可以走的很快，但一群人才能走的更远！</span>',
+        pre: '<hr/>',
+        style: 'text-align: left;'
       }, //添加页脚
       copyCode: {
-        buttonText: "Copy to clipboard",
-        errorText: "Error",
-        successText: "Success",
+        buttonText: 'Copy to clipboard',
+        errorText: 'Error',
+        successText: 'Success'
       },
       markdown: {
         renderer: {
           code: function (code, lang, base = null) {
-            if (lang === "dot") {
-              return '<div class="viz">' + Viz(code, "SVG") + "</div>";
+            if (lang === 'dot') {
+              return '<div class="viz">' + Viz(code, 'SVG') + '</div>'
             }
 
             var pdf_renderer = function (code, lang, verify) {
@@ -191,48 +192,53 @@
                 function rand_gen() {
                   return Math.floor((Math.random() + 1) * 65536)
                     .toString(16)
-                    .substring(1);
+                    .substring(1)
                 }
                 return (
                   rand_gen() +
                   rand_gen() +
-                  "-" +
+                  '-' +
                   rand_gen() +
-                  "-" +
+                  '-' +
                   rand_gen() +
-                  "-" +
+                  '-' +
                   rand_gen() +
-                  "-" +
+                  '-' +
                   rand_gen() +
                   rand_gen() +
                   rand_gen()
-                );
+                )
               }
               if (
                 lang &&
-                !lang.localeCompare("pdf", "en", { sensitivity: "base" })
+                !lang.localeCompare('pdf', 'en', {
+                  sensitivity: 'base'
+                })
               ) {
                 if (verify) {
-                  return true;
+                  return true
                 } else {
                   var divId =
-                    "markdown_code_pdf_container_" +
-                    unique_id_generator().toString();
-                  var container_list = new Array();
-                  if (localStorage.getItem("pdf_container_list")) {
+                    'markdown_code_pdf_container_' +
+                    unique_id_generator().toString()
+                  var container_list = new Array()
+                  if (localStorage.getItem('pdf_container_list')) {
                     container_list = JSON.parse(
-                      localStorage.getItem("pdf_container_list")
-                    );
+                      localStorage.getItem('pdf_container_list')
+                    )
                   }
-                  container_list.push({ pdf_location: code, div_id: divId });
+                  container_list.push({
+                    pdf_location: code,
+                    div_id: divId
+                  })
                   localStorage.setItem(
-                    "pdf_container_list",
+                    'pdf_container_list',
                     JSON.stringify(container_list)
-                  );
+                  )
                   return (
                     '<div style="margin-top:' +
                     PDF_MARGIN_TOP +
-                    "; margin-bottom:" +
+                    '; margin-bottom:' +
                     PDF_MARGIN_BOTTOM +
                     ';" id="' +
                     divId +
@@ -241,21 +247,21 @@
                     code +
                     '"> Link </a> to ' +
                     code +
-                    "</div>"
-                  );
+                    '</div>'
+                  )
                 }
               }
-              return false;
-            };
+              return false
+            }
             if (pdf_renderer(code, lang, true)) {
-              return pdf_renderer(code, lang, false);
+              return pdf_renderer(code, lang, false)
             }
             //return this.origin.code.apply(this, arguments);
-            return base ? base : this.origin.code.apply(this, arguments);
-          },
-        },
-      },
-    };
+            return base ? base : this.origin.code.apply(this, arguments)
+          }
+        }
+      }
+    }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
@@ -280,31 +286,24 @@
   <script>
     document.body.oncopy = function () {
       alert(
-        "复制成功 🎉",
-        "若要转载或引用请务必保留原文链接，并申明来源。如果你觉得本仓库不错，那就来 GitHub 给个 Star 吧 😊   - by 吴跟强",
-        "success"
-      );
-    };
+        '复制成功 🎉',
+        '若要转载或引用请务必保留原文链接，并申明来源。如果你觉得本仓库不错，那就来 GitHub 给个 Star 吧 😊   - by  ',
+        'success'
+      )
+    }
   </script>
   <!-- 网页浏览进度条 -->
-  <script src="./assets/docs-js/progressBar.js"></script>
+  <script src="./assets/docs-js/uTools.js"></script>
   <script>
-    uTools.inItProgressBar(); // 页面浏览进度条
+    uTools.inItProgressBar() // 页面浏览进度条
     uTools.inItGoUp({
-      id: "gPid",
-      right: "0px",
-      content: "top",
-    });
-    window.addEventListener("hashchange", function () {
-      if (window.location.hash != "#/") {
-        document.getElementsByClassName("app-nav")[0].style.backgroundColor =
-          "#ffffff";
-      } else {
-        document.getElementsByClassName("app-nav")[0].style.backgroundColor =
-          "";
-      }
-    });
+      id: 'gPid', // 组件id
+      right: '0px', // 距离右边距离
+      content: 'top' // 组件内容
+    })
   </script>
+
+  <script src="./assets/docs-js/index.js"></script>
   <!-- 代码高亮 -->
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-csharp.min.js"></script>
   <script
@@ -316,38 +315,48 @@
     L2Dwidget.init({
       model: {
         jsonPath:
-          "https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json", //萌娘
-        //jsonPath: "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
+          'https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json', //萌娘
+        // jsonPath:
+        // 'https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json',
         //jsonPath:"https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json",  //黑猫
         //jsonPath:"https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json",  //白猫
         //jsonPath:"https://unpkg.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json", //狗狗
         //jsonPath:"https://unpkg.com/live2d-widget-model-z16@1.0.5/assets/z16.model.json", //小可爱
-        //jsonPath:"https://unpkg.com/live2d-widget-model-hibiki@1.0.5/assets/hibiki.model.json",
-        //jsonPath:"https://unpkg.com/live2d-widget-model-nipsilon@1.0.5/assets/nipsilon.model.json",
-        //jsonPath:"https://unpkg.com/live2d-widget-model-tsumiki@1.0.5/assets/tsumiki.model.json",
-        scale: 1,
+        // jsonPath:
+        //   'https://unpkg.com/live2d-widget-model-hibiki@1.0.5/assets/hibiki.model.json',
+        // jsonPath:
+        //   'https://unpkg.com/live2d-widget-model-nipsilon@1.0.5/assets/nipsilon.model.json',
+        // jsonPath:
+        //   'https://unpkg.com/live2d-widget-model-haru/02@1.0.5/assets/haru/02.model.json',
+        scale: 1
       },
       display: {
-        position: "right", //看板娘的表现位置
+        position: 'right', //看板娘的表现位置
         width: 200, //小萝莉的宽度
         height: 400, //小萝莉的高度
         hOffset: 35,
-        vOffset: -30,
+        vOffset: -30
       },
       mobile: {
         show: true,
-        scale: 1.3,
+        scale: 1.3
       },
       react: {
         opacityDefault: 0.8,
-        opacityOnHover: 1,
+        opacityOnHover: 1
       },
       dialog: {
         enable: true,
         script: {
-          "tap body": "哎呀！别碰我！",
-        },
-      },
-    });
+          'every idle 10s': '$hitokoto$',
+          // 当触摸到星星图案
+          'hover .cover-main': '欢迎来到知识 (*/ω＼*)',
+          // 当触摸到角色身体
+          'tap body': '哎呀！别碰我！'
+          // 当触摸到角色头部
+          // 'tap face': '人家已经不是小孩子了！'
+        }
+      }
+    })
   </script>
 </html>
