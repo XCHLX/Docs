@@ -1,10 +1,12 @@
 # cn-tools
 
-## npm
+## npm 
+### 安装
 ```shell
 // 安装
 yarn add cn-tools
 ```
+### 使用方式
 ```javascript
 import { inItProgressBar, inItGoUp } from 'cn-tools'
 // 页面浏览进度条
@@ -25,7 +27,7 @@ inItGoUp({
 
 ## 浏览器
 
-### inItProgressBar (页面浏览进度条)
+### 使用方式
 
 ```javascript
 <script src="./assets/docs-js/cnTools.js"></script>
