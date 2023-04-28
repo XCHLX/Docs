@@ -2,5 +2,5 @@
 
 <!-- 侧边栏 -->
 
-- [🚀.Npm](/Npm/README "Npm")
-  - [.uTools](/Npm/uTools "uTools")
+- [🚀.Npm](/Npm/README 'Npm')
+  - [.cn-tools](/Npm/cn-tools 'cn-tools')

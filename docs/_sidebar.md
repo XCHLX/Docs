@@ -8,4 +8,4 @@
   - [.Net 基础语法](/Net/基础语法 '.基础语法')
 
 - [.Npm](/Npm/README 'Npm')
-- [.uTools](/Npm/uTools 'uTools')
+  - [.cn-tools](/Npm/cn-tools 'cn-tools')
