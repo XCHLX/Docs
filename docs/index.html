@@ -314,6 +314,9 @@
     charset="utf-8"
   ></script>
   <script type="text/javascript">
+    let width = document.getElementsByTagName('body')[0].clientWidth
+    let height = document.getElementsByTagName('body')[0].clientHeight
+
     L2Dwidget.init({
       model: {
         jsonPath:
@@ -334,8 +337,8 @@
       },
       display: {
         position: 'right', //看板娘的表现位置
-        width: 200, //小萝莉的宽度
-        height: 400, //小萝莉的高度
+        width: width / 10, //小萝莉的宽度
+        height: width / 5, //小萝莉的高度
         hOffset: 35,
         vOffset: -30
       },
